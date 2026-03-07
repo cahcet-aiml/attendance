@@ -1,21 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>CAHCET Attendance Portal</title>
-<link rel="stylesheet" href="style.css">
-</head>
+function drawGauge(percent){
 
-<body>
+const canvas=document.getElementById("gauge")
+const ctx=canvas.getContext("2d")
 
-<div class="container">
+ctx.clearRect(0,0,200,120)
 
-<h1>CAHCET AIML Attendance</h1>
+ctx.lineWidth=20
+ctx.beginPath()
+ctx.strokeStyle="#eee"
+ctx.arc(100,100,70,Math.PI,0)
+ctx.stroke()
 
-<a href="student.html" class="btn">Student Dashboard</a>
+ctx.beginPath()
 
-<a href="staff.html" class="btn">Staff / CR Login</a>
+let end=Math.PI+(Math.PI*percent/100)
 
-</div>
+ctx.strokeStyle="#4facfe"
+ctx.arc(100,100,70,Math.PI,end)
+ctx.stroke()
 
-</body>
-</html>
+ctx.font="20px Arial"
+ctx.fillStyle="#333"
+ctx.textAlign="center"
+ctx.fillText(percent+"%",100,95)
+
+}
