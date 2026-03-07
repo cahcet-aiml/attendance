@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Student Dashboard</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<div class="container slide">
+<div class="container">
 
-<h2>Student Dashboard</h2>
+<h2>Check Attendance</h2>
+
+<select id="semester">
+
+<option value="sem1">Semester 1</option>
+<option value="sem2">Semester 2</option>
+<option value="sem8">Semester 8</option>
+
+</select>
 
 <input id="roll" placeholder="Enter Roll Number">
 
-<button onclick="checkStudent()">Check Attendance</button>
+<button onclick="checkStudent()">Check</button>
 
 <div id="result"></div>
 
