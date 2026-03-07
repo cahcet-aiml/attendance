@@ -173,9 +173,7 @@ status:checked?"P":"A"
 
 fetch(API,{
 method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
+mode:"no-cors"
 body:JSON.stringify({
 semester:semester,
 records:records
