@@ -3,7 +3,6 @@ body{
 font-family:Arial;
 margin:0;
 padding:20px;
-min-height:100vh;
 
 background:linear-gradient(-45deg,#4facfe,#00f2fe,#43e97b,#38f9d7);
 background-size:400% 400%;
@@ -23,7 +22,7 @@ animation:bgmove 12s ease infinite;
 
 background:white;
 padding:25px;
-border-radius:12px;
+border-radius:10px;
 max-width:600px;
 margin:auto;
 
@@ -31,20 +30,28 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
 }
 
-h1,h2{
+.btn{
+
+display:block;
+padding:12px;
+margin:10px 0;
 
 text-align:center;
 
+background:#4facfe;
+color:white;
+
+text-decoration:none;
+
+border-radius:6px;
+
 }
 
-input{
+input,select{
 
 width:100%;
 padding:10px;
 margin:10px 0;
-
-border-radius:6px;
-border:1px solid #ccc;
 
 }
 
@@ -53,49 +60,12 @@ button{
 width:100%;
 padding:10px;
 
+background:#4facfe;
+color:white;
+
 border:none;
-border-radius:6px;
-
-background:#4facfe;
-color:white;
-font-size:16px;
-
-cursor:pointer;
-
-}
-
-.btn{
-
-display:block;
-text-align:center;
-
-padding:12px;
-
-background:#4facfe;
-color:white;
-
-margin:10px 0;
-
-text-decoration:none;
 
 border-radius:6px;
-
-}
-
-.semesterSelect{
-
-width:100%;
-padding:12px;
-
-border-radius:30px;
-
-border:2px solid #4facfe;
-
-font-weight:bold;
-
-text-align:center;
-
-margin-bottom:10px;
 
 }
 
@@ -103,32 +73,9 @@ margin-bottom:10px;
 
 display:flex;
 justify-content:space-between;
-align-items:center;
 
 padding:8px;
 
 border-bottom:1px solid #eee;
-
-}
-
-.studentRow span{
-
-flex:1;
-word-break:break-word;
-
-}
-
-.studentRow input{
-
-width:20px;
-height:20px;
-
-}
-
-#gauge{
-
-display:block;
-margin:auto;
-margin-top:20px;
 
 }
