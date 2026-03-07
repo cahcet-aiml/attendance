@@ -2,11 +2,11 @@ body{
 
 font-family:Arial;
 background:linear-gradient(135deg,#4facfe,#00f2fe);
-margin:0;
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+margin:0;
 
 }
 
@@ -15,13 +15,13 @@ align-items:center;
 background:white;
 padding:40px;
 border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-text-align:center;
 width:420px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
 }
 
-input{
+input,select{
 
 padding:10px;
 width:80%;
@@ -35,18 +35,10 @@ button{
 
 padding:10px 20px;
 background:#4facfe;
-border:none;
 color:white;
+border:none;
 border-radius:5px;
 cursor:pointer;
-transition:0.3s;
-
-}
-
-button:hover{
-
-background:#0077ff;
-transform:scale(1.05);
 
 }
 
@@ -58,15 +50,7 @@ margin:15px;
 background:#4facfe;
 color:white;
 text-decoration:none;
-border-radius:6px;
-transition:0.3s;
-
-}
-
-.btn:hover{
-
-background:#0077ff;
-transform:scale(1.05);
+border-radius:5px;
 
 }
 
@@ -74,40 +58,7 @@ transform:scale(1.05);
 
 display:flex;
 justify-content:space-between;
-padding:6px;
 border-bottom:1px solid #eee;
-
-}
-
-.fade{
-
-animation:fade 1s;
-
-}
-
-.slide{
-
-animation:slide 1s;
-
-}
-
-@keyframes fade{
-
-from{opacity:0}
-to{opacity:1}
-
-}
-
-@keyframes slide{
-
-from{
-opacity:0;
-transform:translateY(50px)
-}
-
-to{
-opacity:1;
-transform:translateY(0)
-}
+padding:6px;
 
 }
