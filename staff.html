@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Student Dashboard</title>
+<title>Staff Panel</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<div class="container slide">
+<div class="container">
 
-<h2>Student Dashboard</h2>
+<h2>Staff Login</h2>
 
-<input id="roll" placeholder="Enter Roll Number">
+<input type="password" id="staffPass" placeholder="Password">
 
-<button onclick="checkStudent()">Check Attendance</button>
+<button onclick="staffLogin()">Login</button>
 
-<div id="result"></div>
+<h3>CR Login</h3>
+
+<input id="crUser" placeholder="Username">
+<input type="password" id="crPass" placeholder="Password">
+
+<button onclick="crLogin()">Login</button>
+
+<div id="panel"></div>
 
 </div>
 
