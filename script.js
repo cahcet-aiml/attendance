@@ -212,6 +212,9 @@ status:checked?"P":"A"
 
 fetch(API,{
 method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
 body:JSON.stringify({
 semester:semester,
 records:records
