@@ -1,4 +1,4 @@
-const API="https://script.google.com/macros/s/AKfycbyZW5iLDiJVozOjV0cVMbTJ1XayJAPPZqnpdXsSialwiT0B89HCWbmvLCM11TzxO0w/exec"
+const API="https://script.google.com/macros/s/AKfycbzGvU5kxkRAAGK6znKsr5tk8FschWDOEaO4xBX5AGZ5aXqaIrenNPNukCxmtiza6fTDsw/exec"
 
 const students={
 
@@ -64,58 +64,6 @@ const students={
 
 }
 
-function checkStudent(){
-
-let roll=document.getElementById("roll").value
-let semester=document.getElementById("semester").value
-
-if(!students[roll]){
-
-document.getElementById("result").innerHTML="Invalid Roll Number"
-return
-
-}
-
-let percent=85
-
-document.getElementById("result").innerHTML=
-
-"Name : "+students[roll]+"<br>"+
-"Semester : "+semester+"<br>"+
-"Attendance will appear after data upload"
-
-drawGauge(percent)
-
-}
-
-function drawGauge(percent){
-
-const canvas=document.getElementById("gauge")
-const ctx=canvas.getContext("2d")
-
-ctx.clearRect(0,0,220,120)
-
-ctx.lineWidth=20
-
-ctx.beginPath()
-ctx.strokeStyle="#eee"
-ctx.arc(110,100,70,Math.PI,0)
-ctx.stroke()
-
-let end=Math.PI+(Math.PI*percent/100)
-
-ctx.beginPath()
-ctx.strokeStyle="#4facfe"
-ctx.arc(110,100,70,Math.PI,end)
-ctx.stroke()
-
-ctx.font="20px Arial"
-ctx.fillStyle="#333"
-ctx.textAlign="center"
-ctx.fillText(percent+"%",110,90)
-
-}
-
 function staffLogin(){
 
 let pass=document.getElementById("staffPass").value
@@ -153,7 +101,7 @@ function loadPanel(){
 
 let html="<h3>Mark Attendance</h3>"
 
-html+="Semester <select id='semester' class='semesterSelect'>"+
+html+="Semester <select id='semester'>"+
 "<option value='Sem1'>Sem1</option>"+
 "<option value='Sem2'>Sem2</option>"+
 "<option value='Sem3'>Sem3</option>"+
@@ -165,6 +113,17 @@ html+="Semester <select id='semester' class='semesterSelect'>"+
 "</select><br>"
 
 html+="Date <input type='date'><br>"
+
+html+="Period <select id='period'>"+
+"<option>1</option>"+
+"<option>2</option>"+
+"<option>3</option>"+
+"<option>4</option>"+
+"<option>5</option>"+
+"<option>6</option>"+
+"<option>7</option>"+
+"<option>8</option>"+
+"</select><br>"
 
 for(let roll in students){
 
@@ -191,6 +150,7 @@ document.getElementById("panel").innerHTML=html
 function saveAttendance(){
 
 let semester=document.getElementById("semester").value
+let period=document.getElementById("period").value
 let date=document.querySelector("input[type=date]").value
 
 let records=[]
@@ -202,6 +162,7 @@ let checked=document.getElementById("r"+roll).checked
 records.push({
 
 date:date,
+period:period,
 roll:roll,
 name:students[roll],
 status:checked?"P":"A"
