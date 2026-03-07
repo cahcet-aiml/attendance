@@ -190,6 +190,34 @@ document.getElementById("panel").innerHTML=html
 
 function saveAttendance(){
 
-alert("Attendance will save to Google Sheets after backend connection")
+let semester=document.getElementById("semester").value
+let date=document.querySelector("input[type=date]").value
+
+let records=[]
+
+for(let roll in students){
+
+let checked=document.getElementById("r"+roll).checked
+
+records.push({
+
+date:date,
+roll:roll,
+name:students[roll],
+status:checked?"P":"A"
+
+})
+
+}
+
+fetch(API,{
+method:"POST",
+body:JSON.stringify({
+semester:semester,
+records:records
+})
+})
+
+alert("Attendance Saved")
 
 }
