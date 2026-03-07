@@ -85,7 +85,7 @@ function crLogin(){
 let user=document.getElementById("crUser").value
 let pass=document.getElementById("crPass").value
 
-if(user=="cr" && pass=="cr123"){
+if((user=="Ameen" || user=="Fareeduddeen") && pass=="AmeFar"){
 
 loadPanel()
 
