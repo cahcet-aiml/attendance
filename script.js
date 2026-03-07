@@ -65,6 +65,7 @@ const students={
 function checkStudent(){
 
 let roll=document.getElementById("roll").value
+let semester=document.getElementById("semester").value
 
 if(!students[roll]){
 
@@ -76,7 +77,8 @@ return
 document.getElementById("result").innerHTML=
 
 "Name : "+students[roll]+"<br>"+
-"Attendance data will appear after staff uploads attendance."
+"Semester : "+semester+"<br>"+
+"Attendance will appear after staff uploads attendance."
 
 }
 
@@ -118,9 +120,14 @@ function loadPanel(){
 let html="<h3>Mark Attendance</h3>"
 
 html+="Semester <select id='semester'>"+
-"<option>Sem1</option>"+
-"<option>Sem2</option>"+
-"<option>Sem8</option>"+
+"<option value='Sem1'>Sem1</option>"+
+"<option value='Sem2'>Sem2</option>"+
+"<option value='Sem3'>Sem3</option>"+
+"<option value='Sem4'>Sem4</option>"+
+"<option value='Sem5'>Sem5</option>"+
+"<option value='Sem6'>Sem6</option>"+
+"<option value='Sem7'>Sem7</option>"+
+"<option value='Sem8'>Sem8</option>"+
 "</select><br>"
 
 html+="Date <input type='date'><br>"
@@ -133,7 +140,7 @@ html+=`
 
 <b>${roll}</b> - ${students[roll]}
 
-<input type="checkbox">
+<input type="checkbox" id="r${roll}">
 
 </div>
 
@@ -141,8 +148,14 @@ html+=`
 
 }
 
-html+="<button>Save Attendance</button>"
+html+="<button onclick='saveAttendance()'>Save Attendance</button>"
 
 document.getElementById("panel").innerHTML=html
+
+}
+
+function saveAttendance(){
+
+alert("Attendance will be saved to Google Sheets after API connection.")
 
 }
