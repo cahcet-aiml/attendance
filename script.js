@@ -74,11 +74,43 @@ return
 
 }
 
+let percent=85
+
 document.getElementById("result").innerHTML=
 
 "Name : "+students[roll]+"<br>"+
 "Semester : "+semester+"<br>"+
-"Attendance will appear after staff uploads attendance."
+"Attendance will appear after data upload"
+
+drawGauge(percent)
+
+}
+
+function drawGauge(percent){
+
+const canvas=document.getElementById("gauge")
+const ctx=canvas.getContext("2d")
+
+ctx.clearRect(0,0,220,120)
+
+ctx.lineWidth=20
+
+ctx.beginPath()
+ctx.strokeStyle="#eee"
+ctx.arc(110,100,70,Math.PI,0)
+ctx.stroke()
+
+let end=Math.PI+(Math.PI*percent/100)
+
+ctx.beginPath()
+ctx.strokeStyle="#4facfe"
+ctx.arc(110,100,70,Math.PI,end)
+ctx.stroke()
+
+ctx.font="20px Arial"
+ctx.fillStyle="#333"
+ctx.textAlign="center"
+ctx.fillText(percent+"%",110,90)
 
 }
 
@@ -119,7 +151,7 @@ function loadPanel(){
 
 let html="<h3>Mark Attendance</h3>"
 
-html+="Semester <select id='semester'>"+
+html+="Semester <select id='semester' class='semesterSelect'>"+
 "<option value='Sem1'>Sem1</option>"+
 "<option value='Sem2'>Sem2</option>"+
 "<option value='Sem3'>Sem3</option>"+
@@ -138,7 +170,7 @@ html+=`
 
 <div class="studentRow">
 
-<b>${roll}</b> - ${students[roll]}
+<span>${roll} - ${students[roll]}</span>
 
 <input type="checkbox" id="r${roll}">
 
@@ -156,6 +188,6 @@ document.getElementById("panel").innerHTML=html
 
 function saveAttendance(){
 
-alert("Attendance will be saved to Google Sheets after API connection.")
+alert("Attendance will save to Google Sheets after backend connection")
 
 }
