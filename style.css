@@ -1,47 +1,65 @@
 body{
+
 font-family:Arial;
 margin:0;
 padding:20px;
 min-height:100vh;
+
 background:linear-gradient(-45deg,#4facfe,#00f2fe,#43e97b,#38f9d7);
 background-size:400% 400%;
 animation:bgmove 12s ease infinite;
+
 }
 
 @keyframes bgmove{
+
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
+
 }
 
 .container{
 
 background:white;
-padding:40px;
-border-radius:10px;
-width:420px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+padding:25px;
+border-radius:12px;
+max-width:600px;
+margin:auto;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
 }
 
-input,select{
+h1,h2{
 
+text-align:center;
+
+}
+
+input{
+
+width:100%;
 padding:10px;
-width:80%;
-margin:10px;
-border-radius:5px;
+margin:10px 0;
+
+border-radius:6px;
 border:1px solid #ccc;
 
 }
 
 button{
 
-padding:10px 20px;
+width:100%;
+padding:10px;
+
+border:none;
+border-radius:6px;
+
 background:#4facfe;
 color:white;
-border:none;
-border-radius:5px;
+font-size:16px;
+
 cursor:pointer;
 
 }
@@ -49,12 +67,35 @@ cursor:pointer;
 .btn{
 
 display:block;
+text-align:center;
+
 padding:12px;
-margin:15px;
+
 background:#4facfe;
 color:white;
+
+margin:10px 0;
+
 text-decoration:none;
-border-radius:5px;
+
+border-radius:6px;
+
+}
+
+.semesterSelect{
+
+width:100%;
+padding:12px;
+
+border-radius:30px;
+
+border:2px solid #4facfe;
+
+font-weight:bold;
+
+text-align:center;
+
+margin-bottom:10px;
 
 }
 
@@ -62,29 +103,32 @@ border-radius:5px;
 
 display:flex;
 justify-content:space-between;
+align-items:center;
+
+padding:8px;
+
 border-bottom:1px solid #eee;
-padding:6px;
 
 }
 
-.semesterSelect{
+.studentRow span{
 
-appearance:none;
-background:white;
-border:2px solid #4facfe;
-border-radius:30px;
-padding:12px;
-font-size:16px;
-font-weight:bold;
-text-align:center;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-transition:0.3s;
+flex:1;
+word-break:break-word;
 
 }
 
-.semesterSelect:hover{
+.studentRow input{
 
-transform:scale(1.03);
-border-color:#0077ff;
+width:20px;
+height:20px;
+
+}
+
+#gauge{
+
+display:block;
+margin:auto;
+margin-top:20px;
 
 }
