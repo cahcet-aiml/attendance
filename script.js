@@ -73,17 +73,10 @@ return
 
 }
 
-let present=Math.floor(Math.random()*30)+10
-let total=present+Math.floor(Math.random()*5)
-
-let percent=((present/total)*100).toFixed(2)
-
 document.getElementById("result").innerHTML=
 
-"Name : "+students[roll]+
-"<br>Present : "+present+
-"<br>Total : "+total+
-"<br>Attendance : "+percent+"%"
+"Name : "+students[roll]+"<br>"+
+"Attendance data will appear after staff uploads attendance."
 
 }
 
@@ -97,7 +90,7 @@ loadPanel()
 
 }else{
 
-alert("Wrong password")
+alert("Wrong Password")
 
 }
 
@@ -114,7 +107,7 @@ loadPanel()
 
 }else{
 
-alert("Wrong login")
+alert("Wrong Login")
 
 }
 
@@ -124,17 +117,26 @@ function loadPanel(){
 
 let html="<h3>Mark Attendance</h3>"
 
-html+="<p>Total Students : "+Object.keys(students).length+"</p>"
+html+="Semester <select id='semester'>"+
+"<option>Sem1</option>"+
+"<option>Sem2</option>"+
+"<option>Sem8</option>"+
+"</select><br>"
 
 html+="Date <input type='date'><br>"
 
 for(let roll in students){
 
 html+=`
+
 <div class="studentRow">
+
 <b>${roll}</b> - ${students[roll]}
+
 <input type="checkbox">
+
 </div>
+
 `
 
 }
