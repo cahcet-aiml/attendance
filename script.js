@@ -160,25 +160,31 @@ for(let roll in students){
 let checked=document.getElementById("r"+roll).checked
 
 records.push({
-
 date:date,
 period:period,
 roll:roll,
 name:students[roll],
 status:checked?"P":"A"
-
 })
 
 }
 
-fetch(API,{
-method:"POST",
-mode:"no-cors"
-body:JSON.stringify({
+const payload = JSON.stringify({
 semester:semester,
 records:records
 })
-})
+
+// sendBeacon avoids CORS preflight
+const blob = new Blob([payload], {type: "text/plain"})
+const ok = navigator.sendBeacon(API, blob)
+
+if(ok){
+  alert("Attendance Sent (check sheet)")
+}else{
+  alert("Send failed")
+}
+
+}
 
 alert("Attendance Saved")
 
