@@ -5,7 +5,7 @@ padding:0;
 font-family:"Segoe UI",sans-serif;
 }
 
-/* Animated background */
+/* Animated gradient background */
 
 body{
 
@@ -20,11 +20,56 @@ animation:bgMove 12s ease infinite;
 
 }
 
+/* background animation */
+
 @keyframes bgMove{
 
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
+
+}
+
+/* Floating particles */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background-image:
+
+radial-gradient(circle at 20% 30%,rgba(255,255,255,0.4) 2px,transparent 2px),
+radial-gradient(circle at 80% 60%,rgba(255,255,255,0.4) 2px,transparent 2px),
+radial-gradient(circle at 50% 90%,rgba(255,255,255,0.4) 2px,transparent 2px),
+radial-gradient(circle at 70% 20%,rgba(255,255,255,0.4) 2px,transparent 2px);
+
+background-size:300px 300px;
+
+animation:particles 20s linear infinite;
+
+pointer-events:none;
+
+}
+
+/* particle movement */
+
+@keyframes particles{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-300px);
+}
 
 }
 
@@ -34,6 +79,7 @@ animation:bgMove 12s ease infinite;
 
 text-align:center;
 color:white;
+
 font-size:14px;
 font-weight:600;
 
@@ -68,7 +114,7 @@ border-radius:16px;
 width:100%;
 max-width:700px;
 
-box-shadow:0 20px 40px rgba(0,0,0,0.3);
+box-shadow:0 20px 40px rgba(0,0,0,0.35);
 
 }
 
