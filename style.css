@@ -213,3 +213,50 @@ grid-template-columns:1fr 26px;
 }
 
 }
+
+/* Header */
+
+.collegeHeader{
+
+text-align:center;
+
+color:white;
+
+font-weight:600;
+
+font-size:14px;
+
+padding:15px;
+
+letter-spacing:0.5px;
+
+}
+
+/* Center Layout */
+
+.mainCenter{
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+min-height:70vh;
+
+}
+
+/* Footer */
+
+.footer{
+
+text-align:center;
+
+color:white;
+
+font-size:13px;
+
+padding:15px;
+
+opacity:0.8;
+
+}
