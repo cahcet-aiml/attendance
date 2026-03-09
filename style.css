@@ -10,13 +10,11 @@ font-family:"Segoe UI",sans-serif;
 body{
 
 min-height:100vh;
+
 display:flex;
-justify-content:center;
-align-items:flex-start;
+flex-direction:column;
 
-padding:30px;
-
-background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c92d2,#f2fcfe);
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c92d2);
 background-size:400% 400%;
 
 animation:bgMove 12s ease infinite;
@@ -31,34 +29,60 @@ animation:bgMove 12s ease infinite;
 
 }
 
-/* Glass Card */
+/* College Header */
+
+.collegeHeader{
+
+text-align:center;
+color:white;
+
+font-weight:600;
+font-size:14px;
+
+padding:15px;
+
+letter-spacing:0.5px;
+
+}
+
+/* Center area */
+
+.mainCenter{
+
+flex:1;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+}
+
+/* Card */
 
 .container{
+
+background:rgba(255,255,255,0.9);
+
+padding:25px;
+
+border-radius:16px;
 
 width:100%;
 max-width:700px;
 
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(14px);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
 
-border-radius:16px;
-padding:25px;
-
-border:1px solid rgba(255,255,255,0.2);
-
-box-shadow:0 20px 40px rgba(0,0,0,0.35);
-
-animation:fadeIn 0.8s ease;
+animation:fadeIn 0.6s ease;
 
 }
-
-/* Fade animation */
 
 @keyframes fadeIn{
 
 from{
 opacity:0;
-transform:translateY(20px);
+transform:translateY(15px);
 }
 
 to{
@@ -73,11 +97,42 @@ transform:translateY(0);
 h1,h2,h3{
 
 text-align:center;
+margin-bottom:15px;
+
+}
+
+/* Buttons */
+
+.btn{
+
+display:block;
+
+width:100%;
+
+padding:12px;
+margin-top:12px;
+
+border-radius:10px;
+
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+
 color:white;
 
-margin-bottom:18px;
+text-align:center;
 
-letter-spacing:0.5px;
+font-weight:600;
+
+text-decoration:none; /* underline remove */
+
+transition:0.25s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 8px 18px rgba(0,0,0,0.25);
 
 }
 
@@ -86,27 +141,23 @@ letter-spacing:0.5px;
 input,select{
 
 width:100%;
-padding:11px;
 
-border-radius:8px;
-border:none;
-
+padding:10px;
 margin-top:10px;
 
-background:rgba(255,255,255,0.15);
-color:white;
+border-radius:8px;
 
-outline:none;
+border:1px solid #ddd;
 
 }
 
-/* Buttons */
+/* Button */
 
-button,.btn{
+button{
 
 width:100%;
-padding:12px;
 
+padding:12px;
 margin-top:12px;
 
 border:none;
@@ -117,21 +168,8 @@ background:linear-gradient(135deg,#00c6ff,#0072ff);
 color:white;
 
 font-weight:600;
-font-size:15px;
 
 cursor:pointer;
-
-transition:0.3s;
-
-}
-
-/* Button hover */
-
-button:hover,.btn:hover{
-
-transform:translateY(-3px) scale(1.02);
-
-box-shadow:0 10px 20px rgba(0,0,0,0.4);
 
 }
 
@@ -140,108 +178,41 @@ box-shadow:0 10px 20px rgba(0,0,0,0.4);
 .studentRow{
 
 display:grid;
+
 grid-template-columns:1fr 30px;
 
 align-items:center;
 
-padding:11px;
+padding:10px;
 
-border-bottom:1px solid rgba(255,255,255,0.1);
-
-color:white;
-
-transition:0.2s;
+border-bottom:1px solid #eee;
 
 }
 
-/* Row hover */
-
 .studentRow:hover{
 
-background:rgba(255,255,255,0.08);
-
-transform:translateX(3px);
+background:#f4f8ff;
 
 }
 
 /* Checkbox */
 
-.studentRow input[type="checkbox"]{
+.studentRow input{
 
 width:20px;
 height:20px;
 
-accent-color:#00c6ff;
-
-cursor:pointer;
-
 }
 
-/* Scroll area */
+/* Scroll attendance list */
 
 #panel{
 
-margin-top:12px;
+max-height:70vh;
 
-max-height:500px;
 overflow-y:auto;
 
-scrollbar-width:none;
-
-}
-
-#panel::-webkit-scrollbar{
-
-display:none;
-
-}
-
-/* Mobile */
-
-@media(max-width:600px){
-
-.container{
-
-padding:18px;
-
-}
-
-.studentRow{
-
-grid-template-columns:1fr 26px;
-
-}
-
-}
-
-/* Header */
-
-.collegeHeader{
-
-text-align:center;
-
-color:white;
-
-font-weight:600;
-
-font-size:14px;
-
-padding:15px;
-
-letter-spacing:0.5px;
-
-}
-
-/* Center Layout */
-
-.mainCenter{
-
-display:flex;
-
-justify-content:center;
-align-items:center;
-
-min-height:70vh;
+margin-top:15px;
 
 }
 
