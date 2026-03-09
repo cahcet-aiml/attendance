@@ -186,8 +186,4 @@ if(ok){
 
 }
 
-alert("Attendance Saved")
 
-}
-
-}
