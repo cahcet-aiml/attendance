@@ -2,7 +2,7 @@
 box-sizing:border-box;
 margin:0;
 padding:0;
-font-family: "Segoe UI", Arial, sans-serif;
+font-family:"Segoe UI", Arial, sans-serif;
 }
 
 /* Background */
@@ -36,7 +36,7 @@ box-shadow:0 15px 35px rgba(0,0,0,0.25);
 
 }
 
-/* Titles */
+/* Headings */
 
 h1,h2,h3{
 
@@ -96,7 +96,6 @@ font-size:14px;
 
 display:grid;
 grid-template-columns: 1fr 30px;
-
 align-items:center;
 
 padding:10px;
@@ -119,6 +118,7 @@ color:#333;
 
 width:20px;
 height:20px;
+cursor:pointer;
 
 }
 
@@ -130,7 +130,7 @@ background:#f5f9ff;
 
 }
 
-/* Scroll list */
+/* Scroll area */
 
 #panel{
 
@@ -140,20 +140,16 @@ margin-top:10px;
 
 }
 
-/* Mobile */
+/* Mobile responsive */
 
 @media(max-width:600px){
 
 .container{
-
 padding:18px;
-
 }
 
 .studentRow{
-
 grid-template-columns:1fr 28px;
-
 }
 
 }
