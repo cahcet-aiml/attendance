@@ -70,6 +70,8 @@ let pass=document.getElementById("staffPass").value
 
 if(pass=="staff123"){
 
+document.getElementById("loginSection").style.display="none"
+
 loadPanel()
 
 }else{
@@ -86,6 +88,8 @@ let user=document.getElementById("crUser").value
 let pass=document.getElementById("crPass").value
 
 if((user=="Ameen" || user=="Fareeduddeen") && pass=="AmeFar"){
+
+document.getElementById("loginSection").style.display="none"
 
 loadPanel()
 
@@ -160,30 +164,28 @@ for(let roll in students){
 let checked=document.getElementById("r"+roll).checked
 
 records.push({
+
 date:date,
 period:period,
 roll:roll,
 name:students[roll],
 status:checked?"P":"A"
+
 })
 
 }
 
-const payload = JSON.stringify({
+const payload=JSON.stringify({
+
 semester:semester,
 records:records
+
 })
 
-// sendBeacon avoids CORS preflight
-const blob = new Blob([payload], {type: "text/plain"})
-const ok = navigator.sendBeacon(API, blob)
+const blob=new Blob([payload],{type:"text/plain"})
 
-if(ok){
-  alert("Attendance Sent (check sheet)")
-}else{
-  alert("Send failed")
-}
+navigator.sendBeacon(API,blob)
+
+alert("Attendance Sent")
 
 }
-
-
