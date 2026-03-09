@@ -5,12 +5,11 @@ padding:0;
 font-family:"Segoe UI",sans-serif;
 }
 
-/* animated AI background */
+/* Animated background */
 
 body{
 
 min-height:100vh;
-
 display:flex;
 flex-direction:column;
 
@@ -29,7 +28,7 @@ animation:bgMove 12s ease infinite;
 
 }
 
-/* header */
+/* Header */
 
 .collegeHeader{
 
@@ -42,7 +41,7 @@ padding:15px;
 
 }
 
-/* center layout */
+/* Center layout */
 
 .centerPage{
 
@@ -56,13 +55,11 @@ padding:20px;
 
 }
 
-/* card */
+/* Card */
 
 .container{
 
-background:rgba(255,255,255,0.15);
-
-backdrop-filter:blur(15px);
+background:white;
 
 padding:30px;
 
@@ -75,18 +72,18 @@ box-shadow:0 20px 40px rgba(0,0,0,0.3);
 
 }
 
-/* titles */
+/* Titles */
 
 h1,h2,h3{
 
 text-align:center;
-color:white;
+color:#222;
 
 margin-bottom:15px;
 
 }
 
-/* buttons */
+/* Buttons */
 
 .btn,button{
 
@@ -126,7 +123,7 @@ box-shadow:0 10px 20px rgba(0,0,0,0.3);
 
 }
 
-/* inputs */
+/* Inputs */
 
 input,select{
 
@@ -138,15 +135,25 @@ margin-top:10px;
 
 border-radius:8px;
 
-border:none;
+border:1px solid #ccc;
 
-background:rgba(255,255,255,0.25);
+background:white;
 
-color:white;
+color:#222;
+
+font-size:14px;
 
 }
 
-/* attendance list */
+/* Placeholder */
+
+input::placeholder{
+
+color:#666;
+
+}
+
+/* Attendance rows */
 
 .studentRow{
 
@@ -158,19 +165,19 @@ align-items:center;
 
 padding:12px;
 
-border-bottom:1px solid rgba(255,255,255,0.2);
+border-bottom:1px solid #eee;
 
-color:white;
+color:#222;
 
 }
 
 .studentRow:hover{
 
-background:rgba(255,255,255,0.1);
+background:#f5f7ff;
 
 }
 
-/* checkbox */
+/* Checkbox */
 
 .studentRow input{
 
@@ -179,7 +186,7 @@ height:20px;
 
 }
 
-/* attendance scroll */
+/* Attendance scroll */
 
 #panel{
 
@@ -191,7 +198,7 @@ overflow-y:auto;
 
 }
 
-/* footer */
+/* Footer */
 
 .footer{
 
@@ -206,7 +213,7 @@ opacity:0.9;
 
 }
 
-/* mobile */
+/* Mobile */
 
 @media(max-width:600px){
 
