@@ -72,10 +72,27 @@ border-radius:6px;
 .studentRow{
 
 display:flex;
+align-items:center;
 justify-content:space-between;
 
-padding:8px;
-
+padding:10px;
 border-bottom:1px solid #eee;
+
+}
+
+.studentRow span{
+
+flex:1;
+word-break:break-word;
+padding-right:10px;
+
+}
+
+.studentRow input[type="checkbox"]{
+
+width:20px;
+height:20px;
+
+flex-shrink:0;
 
 }
